@@ -1,0 +1,43 @@
+Django Notes:
+
+Django has a model template view system. (It handles the controller)
+
+Model:
+The model is the object that is mapped to the database. For instance, if our model object has 3 attributes, (name, email, age) then this will map
+those three attributes to our SQLite database. This is called object relation mapping (ORM), and is much easier then trying to work SQLite directly.
+
+In our scenario, one of the models we create is for posts, which has these parameters:
+title
+content
+date_posted
+author
+All of these then get put into an sqlite database
+
+Template:
+This is what the user will see (aka html code). It is the front end programming shown. While you can use traditional
+CSS, JavaScript and HTML, you can also use Django programming as well to make these pages dynamic.
+
+
+View:
+The view presents the model to the client as an HTTP response.
+In other words, if a function/class returns an HTTP response, it is a view (otherwise it is not and put it somewhere else).
+
+Put all together:
+The model creates and interacts with the SQL, the view then uses the model and sends a
+template to the user (client side). This template is just HTML with other stuff in it.
+
+
+Other things to keep in mind:
+Making an app is as simple as typing into cmd: python manage.py startapp <appname>
+This creates a directory that looks like this:
+<appname>/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+
+Also, whenever a new URL is made, it should be added to urls.py
