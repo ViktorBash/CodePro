@@ -42,9 +42,9 @@ This creates a layout like this:
 settings.py:
 This holds the settings for the whole project.
 The first thing : BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-This just gives the output of where manage.py is (so you can run the server).  
+This just gives the output of where manage.py is (so you can run the server).
 
-Your secret key is for security and should not be public, otherwise security leaks can happen. 
+Your secret key is for security and should not be public, otherwise security leaks can happen.
 
 Debugging should be on for developing and learning, for production turn it to False.
 Installed Apps is the parts of Django that you use. These are components/pieces of Django.
@@ -62,3 +62,12 @@ Password-validators: passwords are good
 python manage.py migrate:
 syncs our Django settings
 
+
+To make migrations whenever a database is changed:
+python manage.py makemigrations
+python manage.py migrate
+
+Whenever a new model is made, make sure to register it via admins.py
+
+To access the Django shell when troubleshooting or accessing stuff:
+python manage.py shell
