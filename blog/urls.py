@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
+from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, UserPostListView
 
 # pk means primary key of the post
 urlpatterns = [
@@ -10,5 +10,6 @@ urlpatterns = [
     path('about/', views.about, name='blog-about'),
     path('post/new/', PostCreateView.as_view(), name='post-create'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
+    path('user/<str:username>', UserPostListView.as_view(), name='user-posts')
 
 ]
