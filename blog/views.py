@@ -7,6 +7,8 @@ from django.views.generic import (ListView,
                                   DeleteView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
+from django.http import HttpResponseRedirect
  # from django.http import HttpResponse not needed at the moment
 # Create your views here.
 """There are alot of class based view types, with alot of functionality.
@@ -79,12 +81,17 @@ def LikePost(request, pk):
     model_to_like = Post.objects.get(id=pk)
     print(model_to_like)
     model_to_like.likes += 1
-    
     model_to_like.save()
+
+    model = Post
+    ordering = ['-date_posted']
     context = {
-    'posts': Post.objects.all()
+    'posts': Post.objects.all(),
+
     }
-    return render(request, 'blog/home.html', context)
+    returned_link = '/post/' + str(pk) + '/'
+    return HttpResponseRedirect(returned_link)
+    #return render(request, 'blog/home.html', context)
 
 
 
