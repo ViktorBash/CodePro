@@ -26,7 +26,7 @@ def profile(request):
         p_form = ProfileUpdateForm(request.POST,
                                    request.FILES, instance=request.user.profile)
 
-        i_form =  InfoUpdateForm(request.POST, instance=request.Profile.about_info)
+        i_form =  InfoUpdateForm(request.POST, instance=request.user.profile)
 
         if u_form.is_valid() and p_form.is_valid and i_form.is_valid():
             u_form.save()
@@ -35,14 +35,17 @@ def profile(request):
             messages.success(request, f'Your account has been updated!')
             # print(old_p_pic)
             # os.remove(old_p_pic)
-
+            print("valid")
             return redirect('profile')
     else:
+        print("not valid")
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
+        i_form = InfoUpdateForm(instance=request.user.profile)
 
     context = {
+    'i_form': i_form,
     'u_form': u_form,
-    'p_form': p_form
+    'p_form': p_form,
     }
     return render(request, 'users/profile.html', context)
