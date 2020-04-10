@@ -121,22 +121,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Media root is where we store media (uploaded files like profile picture)
-# Works on every OS
-# Media URL is public directory
+# Media root is where we store media (uploaded files like profile picture), it Works on every OS
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'  # To make our forms look nice
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
 
+# For sending emails (mainly for password resets). EMAIL_HOST_USER and EMAIL_HOST_PASSWORD is for the email we use.
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "zerekogaming@gmail.com"
-EMAIL_HOST_PASSWORD = "aulvnwrayedtrmzl"
-# EMAIL_HOST_USER = os.environ.get('GMAIL_USER')
-# EMAIL_HOST_PASSWORD = os.environ.get('GMAIL_PASS')
+EMAIL_HOST_USER = str(os.environ.get('GMAIL_USER'))
+EMAIL_HOST_PASSWORD = str(os.environ.get('GMAIL_PASS'))
