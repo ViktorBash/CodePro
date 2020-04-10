@@ -18,8 +18,8 @@ class Profile(models.Model):
         return f'{self.user.username}'
 
     # Overriding save method to cut down photo size
-    def save(self):
-        super().save()
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
 
         img = Image.open(self.image.path)
         if img.height > 300 or img.width > 300:

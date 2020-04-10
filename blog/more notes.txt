@@ -1,0 +1,73 @@
+Notes:
+When we create a Django app we have:
+mysite/
+    manage.py
+    mysite/
+        __init__.py
+        settings.py
+        urls.py
+        asgi.py
+        wsgi.py
+These files are:
+
+The outer mysite/ root directory is a container for your project. Its name doesn’t matter to Django; you can rename it to anything you like.
+manage.py: A command-line utility that lets you interact with this Django project in various ways. You can read all the details about manage.py in django-admin and manage.py.
+The inner mysite/ directory is the actual Python package for your project. Its name is the Python package name you’ll need to use to import anything inside it (e.g. mysite.urls).
+mysite/__init__.py: An empty file that tells Python that this directory should be considered a Python package. If you’re a Python beginner, read more about packages in the official Python docs.
+
+mysite/settings.py: Settings/configuration for this Django project. Django settings will tell you all about how settings work.
+mysite/urls.py: The URL declarations for this Django project; a “table of contents” of your Django-powered site. You can read more about URLs in URL dispatcher.
+mysite/asgi.py: An entry-point for ASGI-compatible web servers to serve your project. See How to deploy with ASGI for more details.
+mysite/wsgi.py: An entry-point for WSGI-compatible web servers to serve your project. See How to deploy with WSGI for more details.
+
+Projects vs. apps, App: web application that does something, project: consists of apps and other stuff
+
+What’s the difference between a project and an app? An app is a Web application that does something – e.g.,
+a Weblog system, a database of public records or a small poll app. A project is a collection of configuration and apps
+ for a particular website. A project can contain multiple apps. An app can be in multiple projects.
+
+To create an app:
+python manage.py startapp <appname>
+This creates a layout like this:
+<appname>/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+
+settings.py:
+This holds the settings for the whole project.
+The first thing : BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+This just gives the output of where manage.py is (so you can run the server).
+
+Your secret key is for security and should not be public, otherwise security leaks can happen.
+
+Debugging should be on for developing and learning, for production turn it to False.
+Installed Apps is the parts of Django that you use. These are components/pieces of Django.
+
+Middleware: Requests and how security/requests are handled.
+
+Templates: renders out HTML templates.
+
+WSGI_Application: how the server works
+
+Databases: Set up which database you will be using (set default to sqlite).
+
+Password-validators: passwords are good
+
+python manage.py migrate:
+syncs our Django settings
+
+
+To make migrations whenever a database is changed:
+python manage.py makemigrations
+python manage.py migrate
+
+Whenever a new model is made, make sure to register it via admins.py
+
+To access the Django shell when troubleshooting or accessing stuff:
+python manage.py shell
