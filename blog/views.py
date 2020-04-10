@@ -5,53 +5,54 @@ from django.views.generic import (ListView,
                                   CreateView,
                                   UpdateView,
                                   DeleteView,
-                                  TemplateView)
+                                  )
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
-from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 from users.models import Profile
-from django.db import models
- # from django.http import HttpResponse not needed at the moment
-# Create your views here.
-"""There are alot of class based view types, with alot of functionality.
+
+"""
+There are a lot of class based view types, with a lot of functionality.
 Our home page is a good fit for a class list view, because it lists the
 posts being shown.
 """
 
-# This is the old view for the home page
+
+# This is the less fancy function view, in order to view the homepage
 def home(request):
     context = {
         'posts': Post.objects.all()
     }
     return render(request, 'blog/home.html', context)
 
+
+# class view to see all of the posts on the home page (also paginated)
 class PostListView(ListView):
     model = Post
-    template_name = 'blog/home.html' # <app>/<model>_<viewtype>.html
+    template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']  # Orders our post from newest to oldest
     paginate_by = 10
 
+
+# class view to see the specific posts of a user, also includes the user's bio, which is why two views are imported
 class UserPostListView(ListView):
-    template_name = 'blog/user_posts.html' # <app>/<model>_<viewtype>.html
-    # context_object_name = 'posts'
+    template_name = 'blog/user_posts.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
     paginate_by = 10
-
-
-
-    def get_queryset(self):
-        user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return Post.objects.filter(author=user).order_by('-date_posted')
 
     def get_context_data(self, **kwargs):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
 
         context = super(UserPostListView, self).get_context_data(**kwargs)
-        context['posts'] = Post.objects.filter(author=user).order_by('-date_posted')
+        context['post'] = Post.objects.filter(author=user).order_by('-date_posted')
         context['Profile'] = Profile.objects.get(user=user)
-
         return context
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-date_posted')
 
 class PostDetailView(DetailView):
     model = Post
