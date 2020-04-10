@@ -8,4 +8,3 @@ It will display the fundamentals of Django.
 3. Deploy it
 4. Add the option for images to articles
 5. Add a comment system
-6. Upvote/Downvote

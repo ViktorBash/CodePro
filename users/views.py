@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, InfoUpdateForm
 from django.contrib.auth.decorators import login_required
 import os
+from .models import Profile
 
 def register(request):
     if request.method == 'POST':
@@ -24,9 +25,13 @@ def profile(request):
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
                                    request.FILES, instance=request.user.profile)
-        if u_form.is_valid() and p_form.is_valid():
+
+        i_form =  InfoUpdateForm(request.POST, instance=request.Profile.about_info)
+
+        if u_form.is_valid() and p_form.is_valid and i_form.is_valid():
             u_form.save()
             p_form.save()
+            i_form.save()
             messages.success(request, f'Your account has been updated!')
             # print(old_p_pic)
             # os.remove(old_p_pic)

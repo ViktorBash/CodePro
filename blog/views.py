@@ -82,16 +82,8 @@ def LikePost(request, pk):
     print(model_to_like)
     model_to_like.likes += 1
     model_to_like.save()
-
-    model = Post
-    ordering = ['-date_posted']
-    context = {
-    'posts': Post.objects.all(),
-
-    }
     returned_link = '/post/' + str(pk) + '/'
     return HttpResponseRedirect(returned_link)
-    #return render(request, 'blog/home.html', context)
 
 
 
