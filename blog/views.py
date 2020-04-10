@@ -74,6 +74,18 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
+def LikePost(request, pk):
+    print("LIKE POST POWER ACTIVATED")
+    model_to_like = Post.objects.get(id=pk)
+    print(model_to_like)
+    model_to_like.likes += 1
+    
+    model_to_like.save()
+    context = {
+    'posts': Post.objects.all()
+    }
+    return render(request, 'blog/home.html', context)
+
 
 
 def about(request):

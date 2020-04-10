@@ -13,7 +13,10 @@
 </div>
 <h2 class="article-title">{{ object.title }}</h2>
 <p class="article-content">{{ object.content }}</p>
-<a class="btn btn-info btn-sm mt-1 mb-1" href="#">Like</a>
+<div>
+  <a class="btn btn-info btn-sm mt-1 mb-1 mr-2" href="{% url 'like' object.id %}">Cheer Post</a>
+  <small class="article content mt-1 mb-1 mr-2">{{ object.likes}} Cheers</small>
+</div>
 </div>
 </article>
 {% endblock content %}

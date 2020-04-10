@@ -12,6 +12,7 @@ upload_to= is where the images will be uploaded (the directory)
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    about_info = models.TextField(default="Hi! I am a fellow Python programmer.")
 
     # Whenever the profile is printed, it will print out the username
     def __str__(self):
