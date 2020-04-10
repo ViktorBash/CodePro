@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
+from django.contrib.auth.models import User
+from django.urls import reverse
+
 
 # Create your models here.
 # cascade means if the user is deleted, the profile will be deleted, but if

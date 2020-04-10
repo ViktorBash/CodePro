@@ -33,12 +33,8 @@ def profile(request):
             p_form.save()
             i_form.save()
             messages.success(request, f'Your account has been updated!')
-            # print(old_p_pic)
-            # os.remove(old_p_pic)
-            print("valid")
             return redirect('profile')
     else:
-        print("not valid")
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
         i_form = InfoUpdateForm(instance=request.user.profile)

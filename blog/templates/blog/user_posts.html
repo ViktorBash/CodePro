@@ -2,8 +2,8 @@
 {% block content %}
 <h1>{{ view.kwargs.username }}</h1>
 <div class="content-section">
-  <p>Welcome to CodePro, where we write articles on Python
-    and other general programming topics!
+  <p>
+    {{ Profile.about_info }}
   </p>
 </div>
 <h2 class="mb-3">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h2>

@@ -4,11 +4,14 @@ from django.views.generic import (ListView,
                                   DetailView,
                                   CreateView,
                                   UpdateView,
-                                  DeleteView)
+                                  DeleteView,
+                                  TemplateView)
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
+from users.models import Profile
+from django.db import models
  # from django.http import HttpResponse not needed at the moment
 # Create your views here.
 """There are alot of class based view types, with alot of functionality.
@@ -31,14 +34,24 @@ class PostListView(ListView):
     paginate_by = 10
 
 class UserPostListView(ListView):
-    model = Post
     template_name = 'blog/user_posts.html' # <app>/<model>_<viewtype>.html
-    context_object_name = 'posts'
+    # context_object_name = 'posts'
     paginate_by = 10
+
+
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
+
+    def get_context_data(self, **kwargs):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+
+        context = super(UserPostListView, self).get_context_data(**kwargs)
+        context['posts'] = Post.objects.filter(author=user).order_by('-date_posted')
+        context['Profile'] = Profile.objects.get(user=user)
+
+        return context
 
 class PostDetailView(DetailView):
     model = Post
@@ -77,7 +90,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 def LikePost(request, pk):
-    print("LIKE POST POWER ACTIVATED")
     model_to_like = Post.objects.get(id=pk)
     print(model_to_like)
     model_to_like.likes += 1
