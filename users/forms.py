@@ -16,11 +16,13 @@ class UserRegisterForm(UserCreationForm):
 # model
 
 class UserUpdateForm(forms.ModelForm):
-    email = forms.EmailField()
+    # To add back feature to update email: uncomment this and add into the
+    # fields list "email"
+    # email = forms.EmailField()
 
     class Meta:
         model = User
-        fields = ['username', 'email']
+        fields = ['username']
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:

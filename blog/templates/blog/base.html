@@ -34,6 +34,7 @@
                 <div class="navbar-nav mr-auto">
                     <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
                     <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+                    <a class="nav-item nav-link" href="{% url 'blog-contact' %}">Contact Me</a>
                 </div>
                 <!-- Navbar Right Side. Displays different links based on if the user is logged in or not-->
                 <div class="navbar-nav">
@@ -70,8 +71,8 @@
                 <p class='text-muted'>
                 <ul class="list-group">
                     <a class="list-group-item list-group-item-light" href="{% url 'blog-home' %}">Latest Posts</a>
-                    <a class="list-group-item list-group-item-light" href="#">Popular Articles</a>
-                    <a class="list-group-item list-group-item-light" href="#">Topic List</a>
+                    <a class="list-group-item list-group-item-light" href="{% url 'blog-home' %}">Popular Articles</a>
+                    <a class="list-group-item list-group-item-light" href="/post/1/">What Is CodePro?</a>
                 </ul>
                 </p>
             </div>

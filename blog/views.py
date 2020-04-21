@@ -98,7 +98,8 @@ def LikePost(request, pk):
     returned_link = '/post/' + str(pk) + '/'
     return HttpResponseRedirect(returned_link)
 
-
+def contact(request):
+    return render(request, "blog/contact.html")
 
 def about(request):
     # Old way, returns HTML in the parenthesis return HttpResponse('<h1>Blog About</h1>')
