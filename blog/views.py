@@ -32,7 +32,7 @@ class PostListView(ListView):
     template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date_posted']  # Orders our post from newest to oldest
-    paginate_by = 10
+    paginate_by = 3
 
 
 # class view to see the specific posts of a user, also includes the user's bio, which is why two views are imported
