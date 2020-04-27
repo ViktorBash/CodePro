@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9057d003-f550-4e12-ac79-1a78cdbfb108" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +87,8 @@
       <option name="presentableId" value="Default" />
       <updated>1583595392841</updated>
       <workItem from="1587915304933" duration="2683000" />
-      <workItem from="1587928097303" duration="3846000" />
+      <workItem from="1587928097303" duration="4443000" />
+      <workItem from="1587947330139" duration="134000" />
     </task>
     <servers />
   </component>
