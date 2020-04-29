@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9057d003-f550-4e12-ac79-1a78cdbfb108" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/DjangoWebsite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoWebsite.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +21,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SocialMediaDjango/craigslist" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -88,7 +88,11 @@
       <updated>1583595392841</updated>
       <workItem from="1587915304933" duration="2683000" />
       <workItem from="1587928097303" duration="4443000" />
-      <workItem from="1587947330139" duration="134000" />
+      <workItem from="1587947330139" duration="1372000" />
+      <workItem from="1587954575034" duration="599000" />
+      <workItem from="1588001636443" duration="1561000" />
+      <workItem from="1588049238270" duration="3085000" />
+      <workItem from="1588188445485" duration="11000" />
     </task>
     <servers />
   </component>
@@ -104,10 +108,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="725" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.234.1280.984@0.0.1920.1040" timestamp="1587929342508" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586628637953">
+    <state x="1338" y="354" width="440" height="444" key="FileChooserDialogImpl" timestamp="1588188454640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.234.1280.984@0.0.1920.1040" timestamp="1586628637953" />
+    <state x="1338" y="354" width="440" height="444" key="FileChooserDialogImpl/0.0.1920.1040/1920.234.1280.984@0.0.1920.1040" timestamp="1588188454640" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1587531500073">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -124,9 +128,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.234.1280.984@0.0.1920.1040" timestamp="1587531500072" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1583597909349">
+    <state x="461" y="162" key="SettingsEditor" timestamp="1588050543093">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.234.1280.984@0.0.1920.1040" timestamp="1583597909349" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.234.1280.984@0.0.1920.1040" timestamp="1588050543093" />
   </component>
 </project>
