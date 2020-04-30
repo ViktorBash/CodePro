@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9057d003-f550-4e12-ac79-1a78cdbfb108" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DjangoWebsite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoWebsite.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +20,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SocialMediaDjango/craigslist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -93,6 +92,7 @@
       <workItem from="1588001636443" duration="1561000" />
       <workItem from="1588049238270" duration="3085000" />
       <workItem from="1588188445485" duration="11000" />
+      <workItem from="1588197869498" duration="1789000" />
     </task>
     <servers />
   </component>
